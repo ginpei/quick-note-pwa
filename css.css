@@ -6,7 +6,7 @@ body {
 .main {
   box-sizing: border-box;
   display: grid;
-  grid-template-areas: "heading button" "textarea textarea";
+  grid-template-areas: "heading buttons" "textarea textarea";
   grid-template-columns: auto 10rem;
   grid-template-rows: 2rem auto;
   grid-gap: 1rem;
@@ -19,8 +19,8 @@ body {
   grid-area: heading;
   line-height: 2rem;
 }
-.main-button {
-  grid-area: button;
+.main-buttons {
+  grid-area: buttons;
 }
 .main-textarea {
   grid-area: textarea;
