@@ -1,6 +1,7 @@
 class TaskController {
   constructor (options = {}) {
     this.elText = options.elApp || document.querySelector('#text')
+    this.elRevert = options.elRevert || document.querySelector('#revert')
     this.initialData = {}
   }
 
@@ -9,6 +10,10 @@ class TaskController {
 
     this.elText.addEventListener('input', (event) => {
       this.save()
+    })
+
+    this.elRevert.addEventListener('click', (event) => {
+      this.revert()
     })
   }
 
@@ -33,6 +38,12 @@ class TaskController {
         this.initialData[p] = data[p]
       }
     }
+  }
+
+  revert () {
+    console.log('revert')
+    this.saveData(this.initialData)
+    this.load()
   }
 }
 
