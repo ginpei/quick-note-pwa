@@ -1,12 +1,14 @@
+const paths = [
+  '/',
+  '/index.html',
+  '/js.js',
+  '/css.css',
+  'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css',
+]
+
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open('static').then((cache) => {
-    cache.addAll([
-      '/',
-      '/index.html',
-      '/js.js',
-      '/css.css',
-      'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css',
-    ])
+    cache.addAll(paths)
   }))
 })
 
@@ -17,11 +19,15 @@ self.addEventListener('install', (event) => {
 self.addEventListener('fetch', (event) => {
   const req = event.request
   event.respondWith(caches.match(req).then((res) => {
-    const p = fetch(req)
-    p.then(async () => {
-      const cache = await caches.open('static')
-      cache.add(req.url)
-    })
+    let p
+    if (navigator.onLine) {
+      p = fetch(req)
+      p.then(async () => {
+        const cache = await caches.open('static')
+        cache.add(req.url)
+      })
+    }
+
     return res || p
   }))
 })
