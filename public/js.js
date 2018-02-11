@@ -17,7 +17,9 @@ class TaskController {
     })
 
     this.elRevert.addEventListener('click', (event) => {
-      this.revert()
+      if (confirm('Are you sure you want to discard your changes?')) {
+        this.revert()
+      }
     })
   }
 
