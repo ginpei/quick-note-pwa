@@ -4,8 +4,6 @@ Uh ah just wanted to try PWA.
 
 - https://note.ginpei.info/
 
-![It works looking like an ordinaly app.](doc/looks.png)
-
 # Installation
 
 1. Open the above URL
