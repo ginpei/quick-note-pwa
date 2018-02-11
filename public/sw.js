@@ -17,16 +17,15 @@ self.addEventListener('install', (event) => {
 self.addEventListener('fetch', (event) => {
   const req = event.request
   event.respondWith(caches.match(req).then((res) => {
-    if (!navigator.onLine) {
-      return res
-    }
-    else {
-      const p = fetch(req)
+    let p
+    if (navigator.onLine) {
+      p = fetch(req)
       p.then(async () => {
         const cache = await caches.open('static')
         cache.add(req.url)
       })
-      return res || p
     }
+
+    return res || p
   }))
 })
