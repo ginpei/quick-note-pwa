@@ -1,0 +1,20 @@
+{
+  "name": "Quick Note",
+  "short_name": "Quick Note",
+  "start_url": ".",
+  "background_color": "white",
+  "theme_color": "#036",
+  "display": "standalone",
+  "icons": [
+    {
+      "sizes": "32x32",
+      "src": "icon32.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "512x512",
+      "src": "icon32.png",
+      "type": "image/png"
+    }
+  ]
+}

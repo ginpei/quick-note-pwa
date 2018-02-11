@@ -1,3 +1,7 @@
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('/sw.js')
+}
+
 class TaskController {
   constructor (options = {}) {
     this.elText = options.elApp || document.querySelector('#text')
