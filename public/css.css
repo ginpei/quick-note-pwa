@@ -4,23 +4,32 @@ body {
 }
 
 .main {
+  --header-height: calc(0.75rem * 2 + 1.5em);
   box-sizing: border-box;
   display: grid;
   grid-template-areas: "heading buttons" "textarea textarea";
   grid-template-columns: auto 10rem;
-  grid-template-rows: 2rem auto;
-  grid-gap: 1rem;
+  grid-template-rows: var(--header-height) auto;
+  grid-gap: 0.5rem;
   height: 100%;
   padding: 1rem;
+}
+.main-heading,
+.main-buttons {
+  height: var(--header-height);
+  line-height: var(--header-height);
 }
 .main-heading {
   font-size: 1rem;
   font-weight: bold;
   grid-area: heading;
-  line-height: 2rem;
+  margin-bottom: 0;  /* kill bootstrap */
 }
 .main-buttons {
   grid-area: buttons;
+}
+.main-buttons .btn {
+  vertical-align: baseline;
 }
 .main-textarea {
   grid-area: textarea;
