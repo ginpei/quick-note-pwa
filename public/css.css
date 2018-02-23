@@ -8,7 +8,7 @@ body {
   box-sizing: border-box;
   display: grid;
   grid-template-areas: "heading buttons" "textarea textarea";
-  grid-template-columns: auto 10rem;
+  grid-template-columns: auto auto;
   grid-template-rows: var(--header-height) auto;
   grid-gap: 0.5rem;
   height: 100%;
@@ -27,6 +27,7 @@ body {
 }
 .main-buttons {
   grid-area: buttons;
+  text-align: right;
 }
 .main-buttons .btn {
   vertical-align: baseline;
