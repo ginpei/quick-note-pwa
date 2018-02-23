@@ -1,17 +1,17 @@
 {
   "private": true,
   "scripts": {
-    "start": "http-server",
+    "start": "browser-sync start --server --no-ui --files ./* --ss public",
     "lint": "eslint public"
   },
   "dependencies": {},
   "devDependencies": {
+    "browser-sync": "^2.23.6",
     "eslint": "^4.17.0",
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^6.0.0",
     "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "http-server": "^0.11.1"
+    "eslint-plugin-standard": "^3.0.1"
   }
 }
