@@ -4,24 +4,40 @@ body {
 }
 
 .main {
+  --header-height: calc(0.75rem * 2 + 1.5em);  /* calculated button height from bootstrap */
+  --footer-height: 1rem;
   box-sizing: border-box;
   display: grid;
-  grid-template-areas: "heading buttons" "textarea textarea";
-  grid-template-columns: auto 10rem;
-  grid-template-rows: 2rem auto;
-  grid-gap: 1rem;
+  grid-template-areas: "header" "body" "footer";
+  grid-template-rows: var(--header-height) auto var(--footer-height);
+  grid-gap: 0.5rem;
   height: 100%;
   padding: 1rem;
 }
-.main-heading {
+.header {
+  display: grid;
+  grid-area: header;
+  grid-template-areas: "heading buttons";
+}
+.header-heading {
   font-size: 1rem;
   font-weight: bold;
   grid-area: heading;
-  line-height: 2rem;
+  line-height: var(--header-height);
+  margin-bottom: 0;  /* kill bootstrap */
 }
-.main-buttons {
+.header-buttons {
   grid-area: buttons;
+  line-height: var(--header-height);
+  text-align: right;
+}
+.header-buttons .btn {
+  vertical-align: baseline;
 }
 .main-textarea {
-  grid-area: textarea;
+  grid-area: body;
+}
+.footer {
+  grid-area: footer;
+  line-height: var(--footer-height);
 }
