@@ -5,10 +5,11 @@ body {
 
 .main {
   --header-height: calc(0.75rem * 2 + 1.5em);  /* calculated button height from bootstrap */
+  --footer-height: 1rem;
   box-sizing: border-box;
   display: grid;
-  grid-template-areas: "header" "body";
-  grid-template-rows: var(--header-height) auto;
+  grid-template-areas: "header" "body" "footer";
+  grid-template-rows: var(--header-height) auto var(--footer-height);
   grid-gap: 0.5rem;
   height: 100%;
   padding: 1rem;
@@ -35,4 +36,8 @@ body {
 }
 .main-textarea {
   grid-area: body;
+}
+.footer {
+  grid-area: footer;
+  line-height: var(--footer-height);
 }
