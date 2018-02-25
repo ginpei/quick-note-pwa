@@ -2,7 +2,7 @@
 
 Uh ah just wanted to try PWA.
 
-- https://note.ginpei.info/
+- https://quick-note.ginpei.info/
 
 # Installation
 
