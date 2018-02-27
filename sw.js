@@ -44,7 +44,9 @@ self.addEventListener('fetch', (event) => {
       pFetched = fetch(req.url, init)
         .then(async (res) => {
           const cache = await caches.open('static')
-          cache.put(req.url, res)
+          await cache.put(req.url, res)
+          const cachedRes = await caches.match(req.url)
+          return cachedRes
         })
     }
 
