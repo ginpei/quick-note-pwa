@@ -1,5 +1,7 @@
 # Quick Note
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ginpei/quick-note-pwa.svg)](https://greenkeeper.io/)
+
 Uh ah just wanted to try PWA.
 
 - https://quick-note.ginpei.info/
